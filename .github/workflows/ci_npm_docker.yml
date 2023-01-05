@@ -20,7 +20,7 @@ env:
   AWS_REGION: eu-north-1
   REGISTRY: ghcr.io
   REPOSITORY: ${{ github.actor }}
-  APP: cadec-demo
+  APP: vote-app
   # ECR_REPOSITORY: cadec23-demo-${{ github.ref_name }}
   # https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables
   # SHORT_SHA: $(echo ${{ github.sha }} | cut -c 1-8)
