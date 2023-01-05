@@ -5,13 +5,13 @@ name: ci-npm-docker
 on: 
   push:
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-excluding-branches
-    branches-ignore:
-      - main
+    # branches-ignore:
+    #   - main
     paths:
       - 'vote-app/**'
   pull_request:
-    branches-ignore:
-      - main
+    # branches-ignore:
+    #   - main
     paths:
       - 'vote-app/**'
   workflow_dispatch:
