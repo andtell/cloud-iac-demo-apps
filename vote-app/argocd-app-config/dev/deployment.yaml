@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cadec-demo
+spec:
+  selector:
+    matchLabels:
+      app: cadec-demo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cadec-demo
+    spec:
+      containers:
+      - name: cadec-demo
+        image: ghcr.io/andtell/cadec-demo:latest
+        env:
+        - name : NODE_ENV
+          value : "dev"
+        - name : EXPRESS_PORT
+          value : "8080"
+        - name : VERSION
+          value : "1.0"
+        ports:
+        - containerPort: 8080
