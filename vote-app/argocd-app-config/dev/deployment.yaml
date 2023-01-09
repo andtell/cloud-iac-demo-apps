@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: cadec-demo
-        image: ghcr.io/andtell/cadec-demo:latest
+        image: ghcr.io/andtell/vote-app:d3b7a8c6
         env:
         - name : NODE_ENV
           value : "dev"
         - name : EXPRESS_PORT
           value : "8080"
         - name : VERSION
-          value : "1.0"
+          value : "1.1"
         ports:
         - containerPort: 8080

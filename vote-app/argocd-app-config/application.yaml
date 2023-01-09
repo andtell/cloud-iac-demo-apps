@@ -7,10 +7,10 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/andtell/cloud-iac-demo.git
-    # targetRevision: HEAD
-    targetRevision: develop
-    path: kubernetes/demo-app/argocd-app-config/dev
+    repoURL: https://github.com/andtell/cloud-iac-demo-apps.git
+    targetRevision: HEAD
+    # targetRevision: develop
+    path: vote-app/argocd-app-config/dev
   destination: 
     server: https://kubernetes.default.svc
     namespace: cadec-demo
