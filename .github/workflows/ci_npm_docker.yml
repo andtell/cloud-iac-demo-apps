@@ -42,6 +42,8 @@ jobs:
         
     - name: Clone
       uses: actions/checkout@v3
+      with:
+        ref: ${{ github.head_ref }}
 
     - name: Log in to the Container registry
       uses: docker/login-action@v2
@@ -68,4 +70,9 @@ jobs:
       run: |
         ./updateVersion ${{ env.SHORT_SHA }}
       working-directory: vote-app/argocd-app-config
+
+    - name: Commit image version update
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Bumping image version to ${{ env.SHORT_SHA }}
           
