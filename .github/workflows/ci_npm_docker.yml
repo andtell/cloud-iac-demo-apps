@@ -68,7 +68,7 @@ jobs:
 
     - name: Update image tag in K8S manifest
       run: |
-        ./updateVersion ${{ env.SHORT_SHA }}
+        ./updateVersion.sh ${{ env.SHORT_SHA }}
       working-directory: vote-app/argocd-app-config
 
     - name: Commit image version update
