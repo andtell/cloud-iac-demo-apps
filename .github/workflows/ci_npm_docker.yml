@@ -68,12 +68,11 @@ jobs:
 
     - name: Update image tag in K8S manifest
       run: | 
+        pwd
         sed -i '' 's+andtell/vote-app:.*$*+andtell/vote-app:'${{ env.SHORT_SHA }}'+' dev/deployment.yaml
-      # bash ./vote-app/argocd-app-config/updateVersion.sh 
-      #  chmod +x updateVersion.sh
-      #  updateVersion.sh ${{ env.SHORT_SHA }}
       #shell: bash  
-      working-directory: vote-app/argocd-app-config
+      # see https://github.com/orgs/community/discussions/25742
+      working-directory: ./vote-app/argocd-app-config
 
     - name: Commit image version update
       uses: stefanzweifel/git-auto-commit-action@v4
