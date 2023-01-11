@@ -67,7 +67,10 @@ jobs:
           ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.APP }}:latest
 
     - name: Update image tag in K8S manifest
-      run:  bash ./vote-app/argocd-app-config/updateVersion.sh ${{ env.SHORT_SHA }}
+      run: | 
+        cd ./vote-app/argocd-app-config/dev 
+        sed -i .bak 's+andtell/vote-app:.*$*+andtell/vote-app:'${{ env.SHORT_SHA }}'+' deployment.yaml
+      # bash ./vote-app/argocd-app-config/updateVersion.sh 
       #  chmod +x updateVersion.sh
       #  updateVersion.sh ${{ env.SHORT_SHA }}
       #shell: bash  
