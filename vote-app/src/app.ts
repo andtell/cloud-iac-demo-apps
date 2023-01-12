@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send({
-    muchImprovedVersion: VERSION,
+    theBestVersion: VERSION,
   });
 });
 
