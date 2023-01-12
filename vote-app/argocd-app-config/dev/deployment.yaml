@@ -21,6 +21,6 @@ spec:
         - name : EXPRESS_PORT
           value : "8080"
         - name : VERSION
-          value : "1.1"
+          value : "1.2"
         ports:
         - containerPort: 8080
