@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: cadec-demo
-        image: ghcr.io/andtell/vote-app:60c20bcf
+        image: ghcr.io/andtell/vote-app:2d044074
         env:
         - name : NODE_ENV
           value : "dev"
