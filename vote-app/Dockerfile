@@ -15,4 +15,5 @@ COPY package*.json ./
 RUN npm ci --production
 COPY --from=builder /usr/bin/dumb-init /usr/bin/dumb-init
 WORKDIR /app/dist
+COPY git-version.txt .
 CMD ["dumb-init", "node", "app.js"]

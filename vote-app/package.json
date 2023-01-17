@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "A simple express app",
   "main": "dist/app.js",
-  "scripts": {
+  "scripts": { 
     "watch": "tsc -w",
-    "build": "tsc",
-    "start": "tsc && node dist/app.js",
+    "build": "git rev-parse HEAD | cut -c1-8 > git-version.txt && tsc",
+    "start": "npm run build && node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andreas Tell",

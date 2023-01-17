@@ -54,6 +54,13 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: "Create gitversion file"
+      run: |
+        pwd
+        echo "${{ env.SHORT_SHA }}" > git-version.txt
+        ls -la
+      working-directory: ./vote-app
+
     - name: Build and push
       uses: docker/build-push-action@v3
       with:
