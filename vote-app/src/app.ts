@@ -27,7 +27,7 @@ app.use(cors());
 app.disable('etag');
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/version', (req, res) => {
   res.send({
     theBestVersion: gitShortSha,
   });
