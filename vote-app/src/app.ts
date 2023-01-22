@@ -64,5 +64,5 @@ app.post("/gcp", (req, res) => {
 
 
 app.listen(PORT, () => {
-  console.log(`Server is running app version '${VERSION}' (Git: '${gitShortSha}') on port '${PORT}'`);
+  console.log(`😎 Server is running app version '${VERSION}' (Git: '${gitShortSha}') on port '${PORT}'`);
 });
