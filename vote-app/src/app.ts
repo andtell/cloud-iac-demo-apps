@@ -29,7 +29,7 @@ app.use(express.json());
 
 app.get('/version', (req, res) => {
   res.send({
-    theBestVersion: gitShortSha,
+    version: gitShortSha,
   });
 });
 
